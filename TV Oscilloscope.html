@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>TV Oscilloscope</title>
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="#">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+    
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">	
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a> 
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/file/d/0B1VgvoOA8jFydGtHd3kzTURWQ2c/view?usp=sharing">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+		
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="leftfigure">
+							<img class="img-fluid" src="img/TV Oscilloscope a.jpg" title="TV Sine Wave">
+
+							<figcaption>Great resolution!</figcaption>
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<h2>TV Oscilloscope</h2>
+
+						<p>
+						What is a CRT TV if not an oscilloscope driven by some fancy raster circuitry? (Well, a poor oscilloscope, but more on that later). 
+						</p>
+						
+						<p>
+						In late Summer 2017, I decided to repurpose the old tube TV I had forgotten in the closet for the last ten years. Inspired by attempts on the Internet, I set out to build a fully usable TV scope, something that nobody seemed to have managed.	
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="design" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Design</h3>
+
+						<p>
+						The largest problem with such a project is that a true scope achieves electron beam deflection by means of electrostatically charged plates, while common TVs employ magnetic deflection to reduce the neccesary tube length. In this system, deflection is proportional to the current through a coil, and the current-voltage relationship varies with frequency in inductors. If the coil driver is built to output a voltage proportional to the signal, as a usual amplifier does, the frequency response of the system will show heavy attenuation in the higher ranges. Consequently, nonsinusoidal waveforms will be distorted because their higher frequency sinusoidal components will be attenuated more than the lower ones. Such an oscilloscope is useless in my opinion.
+						</p>
+
+						<p>
+						I tried using a reasonably simple solution to this problem. A current sense resistor placed in series with the coil gives rise to a voltage difference proportional to the current passing through itself and the coil. If the amplifier circuit uses this voltage as the negative feedback, the result is a voltage controlled current source, exactly what we needed. And it works perfectly fine... until you go past 1Khz and the amplifiers desperately try to push the necessary current, which inevitably results in them hitting the supply rail voltage and clipping the signal. But for the very small bandwidth of 0-1Khz, this setup works acceptably, displaying sharp sawtooth, triangle, and square waves. I could have tried to increase the supply voltage and delay clipping, but my class B output stage would have burst into flames if subjected to more than 30V.
+						</p>
+
+						<p>
+						For what it's worth, I also built an adjustable frequency horizontal scanning circuit, complete with triggering. I obtained the required sawtooth signal by passing a square wave from a microcontroller through an integrator. In retrospect I regret resorting to an MCU for convenience, because I feel that sullied the otherwise analog scope :).
+						</p>
+
+						<p>
+						In any case, it was a fun project that taught me quite a bit about amplifier design.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="leftfigure clickable">
+							<a href="https://github.com/VSMCV/TV-Oscilloscope/tree/master/Electrical%20Schematic%20for%20Sweep%20Circuit" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope b.jpg" title="TV Electrical">
+
+								<figcaption>Electrical schematic for horizontal scanning circuit</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<figure class="rightfigure clickable">
+							<a href="https://github.com/VSMCV/TV-Oscilloscope/tree/master/Software/TV_Sweep" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope c.jpg" title="TV Software">
+
+								<figcaption>Software</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="gallery" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Gallery</h3>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1xwLOcaywaB8c5yHKRnXIJ_bgDwdyCCkU" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope a.jpg" title="TV Sine Wave">
+
+								<figcaption>Sine Wave</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1DqqV5cCwuE3U3M-fgzPW5rRX81Y4Vv9a" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope d.jpg" title="TV Triangle Wave">
+
+								<figcaption>Triangle Wave</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1nqDAYmCnSRGB9kEwZvwoN7OasdH7jSXj" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope e.jpg" title="TV Sawtooth Wave">
+
+								<figcaption>Sawtooth Wave</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+					
+				<div class="row">	
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1g9ZkZhdtMaKQFziiHbL7b2wrA0Dqwh7T" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope f.jpg" title="TV Square Wave">
+
+								<figcaption>Square Wave</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1ZlSqOjx_HxKJGry8Epbm2zz83kFLYaOS" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope g.jpg" title="TV Noise">
+
+								<figcaption>Noise</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1T0Wjcs-fGHQhvUD9FjsAdzf0WcaYyphT" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope h.jpg" title="TV Setup">
+
+								<figcaption>Setup</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">	
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=162-sO1IpWi_oLsYKuXmmWkp29Hrenwaw" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope i.jpg" title="TV Jank">
+
+								<figcaption>How to get a dual rail supply</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1dg9OpEvx3glqwjvu75zqVXbaq8bk1KI9" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope j.jpg" title="TV Volatge Regulators">
+
+								<figcaption>Voltage Regulators</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1pTvxGber4wK__r51hJboGZ3mE1ZrL7AU" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope k.jpg" title="TV Sweep">
+
+								<figcaption>Trigger and Sweep Circuit</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">	
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1pqzcfwnM3cOuoKzFkg07ODnV-HXnAJYs" class="pic-link">
+								<img class="img-fluid" src="img/TV Oscilloscope l.jpg" title="TV Amplifiers">
+
+								<figcaption>Vertical Coil Driver</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-md-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

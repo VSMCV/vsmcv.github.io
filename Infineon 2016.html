@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Infineon Robot Building Workshops 2016</title>
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="#">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+    
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">	
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a> 
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/file/d/0B1VgvoOA8jFydGtHd3kzTURWQ2c/view?usp=sharing">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+		
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Infineon Robot Building Workshops 2016</h2>
+
+						<p>
+						In the 2016 edition of the workshops, my team, though not entirely the original one, tried to fix all of the shortcomings from the previous year. We won the final contest.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<figure class="clickable">
+							<a href="https://www.youtube.com/watch?v=vVGE9mY2WBQ" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 b.gif" title="Infineon 2016">
+
+								<figcaption>Line Follower 2016. Tap to see full video!</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="design" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Design</h3>
+
+						<p>
+						We started by implementing a two board design instead of one, so as to increase the distance between the sensors and the wheels. This gave the controller more reaction time and made tuning the PID easier. We also included some luxury, namely a battery indicator and more blinkenlights. We also finally figured out how to implement the integrative term (I in PID). Clamping its influence at a certain threshold eliminates the instability it would have caused otherwise. Unfortunately, heavier batteries were mandatory this time, which negated some of the improvements we introduced.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<figure class="clickable">
+							<a href="https://github.com/VSMCV/Line-Follower-2016/tree/master/Hardware/Electrical" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 c.jpg" title="Infineon 2016 Electrical">
+
+								<figcaption>Electrical schematic</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="leftfigure clickable">
+							<a href="https://github.com/VSMCV/Line-Follower-2016/tree/master/Hardware/Layout" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 d.jpg" title="Infineon 2016 Board">
+
+								<figcaption>Board design</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<figure class="rightfigure clickable">
+							<a href="https://github.com/VSMCV/Line-Follower-2016/tree/master/Software" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 e.jpg" title="Infineon 2016 Software">
+
+								<figcaption>Software</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="gallery" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Gallery</h3>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1qATYMNm3kcJrYQEDsHjzrwAIHaN0QiHB" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 a.jpg" title="Infineon 2016 Robot">
+
+								<figcaption>Front</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1wi4p59h5TNucNq8VKT7CWJ50CX6QyNjI" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 f.jpg" title="Infineon 2016 Top">
+
+								<figcaption>Top</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class=" rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1GCpNXHeNHzCI8FJ4_3UmfMEEh3mhWzVM" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 g.jpg" title="Infineon 2016 Bottom">
+
+								<figcaption>Bottom, showing IR sensors</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=12Uv2yhnePLsFVqMx6s6KW6iI7W8o82iS" class="pic-link">
+								<img class="img-fluid" src="img/Infineon 2016 h.jpg" title="Infineon 2016 Diploma">
+
+								<figcaption>First Place</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-md-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Mini Sumo Robot</title>
+	
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="#">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+    
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">	
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a> 
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/file/d/0B1VgvoOA8jFydGtHd3kzTURWQ2c/view?usp=sharing">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+		
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="leftfigure">
+							<img class="img-fluid" src="img/Mini Sumo a.jpg" title="Mini Sumo Robot">
+
+							<figcaption>Mini Sumo Robot</figcaption>
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<h2>Mini Sumo Robot</h2>
+
+						<p>
+						My first attempt at a sumo robot. Built everything by myself because... Everyone can do mechanical engineering!
+						</p>
+
+						<p>
+						I always thought that sumo was the most interesting of the usual robot competitions. I had avoided building such a robot only because I was worried about working with steel and other tough materials. In the end, the greatest challenge was in fact making the wheels. I still blame them for losing me the contest. 
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<p>
+						The first day at the Infomatrix World Final in Bucharest was very promising, with my robot defeating everyone in the qualification stage. Nevertheless, it still bothered me that the frontal blade was not laying flat on the ground due to my not-quite-round homemade wheels. When I got back home, I decided to try another material for the tires. It worked better than the previous one, but altered the height of the robot slightly, upsetting the delicate balance that kept the ring edge detectors working. I didn't realise this and got eliminated in the first round the next day because the robot left the ring by itself.  
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="design" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Design</h3>
+
+						<p>
+						The design is very spartan in nature, consisting of a steel construction tool choped with the grinder and sharpened at one end. Also spartan are the home cast lead components, which were made by heating fishing weights in a kettle. What perhaps gave me a competitive advantege was the fact that I used oversized motors that barely even fit into the width constraint even after adjustments with the Dremel. I used two distance sensors in the front, one on each side, and one in the back. The two long range sensors in the front also played tricks on me, at times displaying corrupt values when no object was in sight. Thankfully, the ring had a protective barrier at just the right height and distance. The controller I used was an Infineon XMC.
+
+						My prefered search technique is going forward for a bit, rapidly turning in place for a number of milliseconds, and repeating this procedure. With some tuning of the durations for these steps, the robot can be made to move mostly around the center of the ring. The initial placement can also greatly affect the outcome of the match. A robot with refined search techniques should never be placed head on, so as to delay the encounter and gain the advantage of detecting the opponent first.
+
+						Plans for a future sumo robot include, but are not limited to: CAD, CNC or machine shop build, accomodating large motors by using 90 degree gearboxes, buying nice wheels, and casting the lead weights properly. Also, employing a MechE. 
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="leftfigure clickable">
+							<a href="https://github.com/VSMCV/Mini-Sumo/tree/master/Hardware/Electrical" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo b.jpg" title="Mini Sumo Electrical">
+
+								<figcaption>Electrical schematic</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-6">
+						<figure class="rightfigure clickable">
+							<a href="https://github.com/VSMCV/Mini-Sumo/tree/master/Software" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo c.jpg" title="Mini Sumo Software">
+
+								<figcaption>Software</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="gallery" class="section">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Gallery</h3>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1XvVy6uuO-piaa9s8lHvC5GlcSYBxz9O5" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo a.jpg" title="Mini Sumo Robot">
+							
+								<figcaption>Front, showing long range sensors</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1He1um61gGo1sL_xCH2vKUe3pbm1H-Kv0" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo d.jpg" title="Mini Sumo Side">
+
+								<figcaption>Side sensors</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1DcnWIt37qkQDW4qgRFoEbJFb_XQi8zoE" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo e.jpg" title="Mini Sumo Back">
+
+								<figcaption>Back</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=146LQXsSwjJVYUPveWu0OJpcP79XYXUhT" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo f.jpg" title="Mini Sumo Top">
+
+								<figcaption>Top</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-md-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=150m7Y_dogAje-RC3Nax19xUkB6tKim4h" class="pic-link">
+								<img class="img-fluid" src="img/Mini Sumo g.jpg" title="Mini Sumo Bottom">
+
+								<figcaption>Bottom, showing motor drivers</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-md-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
