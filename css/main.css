@@ -22,9 +22,17 @@
 body
 {
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
     background-color: #e8e8e8;
     color: #2d2d2d;
     -webkit-animation: fadein 2s;
+}
+@media(max-width: 60em)
+{
+    body
+    {
+        font-size: 150%;
+    }
 }
 
 div.section
@@ -43,11 +51,7 @@ div.row
 
 h2
 {
-    font-size: 30px;
-}
-p
-{
-    font-size: 20px;
+    font-size: 160%;
 }
 figure
 {
@@ -91,7 +95,7 @@ a.hyp:active
 }
 div.back-to-top a
 {
-    font-size: 30px;
+    font-size: 200%;
 }
 
 img
@@ -103,7 +107,6 @@ img
 }
 figcaption
 {
-    font-size: 20px;
     text-align: center;
     margin-top: 9px;
     margin-bottom: 40px;
@@ -117,7 +120,7 @@ a.navbar-text
 {
     color: #c4b38b;
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 25px;
+    font-size: 130%;
     padding-top: 0;
     padding-bottom: 0;
 }
