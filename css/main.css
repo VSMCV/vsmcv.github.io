@@ -45,10 +45,6 @@ h2
 {
     font-size: 30px;
 }
-h3
-{
-    font-size: 25px;
-}
 p
 {
     font-size: 20px;
@@ -109,7 +105,8 @@ figcaption
 {
     font-size: 20px;
     text-align: center;
-    margin: 0.5vw;
+    margin-top: 9px;
+    margin-bottom: 40px;
 }
 
 nav
