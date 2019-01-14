@@ -27,13 +27,6 @@ body
     color: #2d2d2d;
     -webkit-animation: fadein 2s;
 }
-@media(max-width: 60em)
-{
-    body
-    {
-        font-size: 150%;
-    }
-}
 
 div.section
 {
