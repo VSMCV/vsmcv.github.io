@@ -30,26 +30,23 @@ body
 
 div.section
 {
-    margin: 5vw;
-}
-div.back-to-top
-{
-    margin-bottom: 2vw;
-}
-
-div.row
-{
-    margin-top: 2vw;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h2
 {
-    font-size: 160%;
+    margin-top: 20px;
+    font-size: 150%;
+}
+p
+{
+    margin-bottom: 20px;
 }
 figure
 {
-    position: relative;
-    top: 19px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 figure.leftfigure
 {
@@ -93,8 +90,8 @@ div.back-to-top a
 
 img
 {
-    border-radius: 4vw;
-    box-shadow: 0.2vw 0.2vw 0.5vw #3d3d3d;
+    border-radius: 60px;
+    box-shadow: 4px 4px 10px #3d3d3d;
     display: block;
     margin: 0 auto;
 }
@@ -102,7 +99,6 @@ figcaption
 {
     text-align: center;
     margin-top: 9px;
-    margin-bottom: 40px;
 }
 
 nav
