@@ -10,7 +10,7 @@
 	0% {transform: translate(280px);}
     25% {transform: translate(280px);}
     100% {transform: translate(0px);}
-} 
+}
 
 @-webkit-keyframes fadein
 {
@@ -22,7 +22,7 @@
 body
 {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #e8e8e8;
     color: #2d2d2d;
     -webkit-animation: fadein 2s;
@@ -70,18 +70,18 @@ a.pic-link
     text-decoration: none;
     color: #2d2d2d;
 }
-a.hyp 
+a.hyp
 {
     text-decoration: none;
     color: #88774f;
 }
-a.hyp:hover 
+a.hyp:hover
 {
-    color: #b09f81;          
+    color: #b09f81;
 }
-a.hyp:active 
+a.hyp:active
 {
-    color: #b09f81;          
+    color: #b09f81;
 }
 div.back-to-top a
 {

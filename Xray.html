@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>DIY X-ray Machine</title>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="#">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a>
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/open?id=1OluaxPzqg-eIcMiKDygLcIoZjUBYfiKX">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-lg-6">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1OTqyEyqcFFcMxXYb0RA5F1tOeRvMnaVl" class="pic-link">
+								<img class="img-fluid" src="img/Xray a.jpg" title="iClicker X-ray">
+
+								<figcaption>X-ray of an iClicker Remote. Cronex Quanta III Casette Screen. ISO 400, 30" exposure, f/5.6. White dots caused by direct x-ray hits to the CCD</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-6">
+						<h2>DIY X-ray Machine</h2>
+
+						<p>
+						An ionizing radiation source might not be the first thing that comes to mind when deciding on a home project for winter break. But in my opinion, part of the joy of being an electrical engineer is that you can allow yourself, at least once in a while, to play with high voltage and deadly equipment. This is my attempt at generating x-rays with the soviet 2C2S rectifier tube. Of course, I did not expose myself to radiation, standing as far as 30 feet away from the concrete lined cellar where I performed the experiments.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="overview" class="section">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>Overview</h2>
+
+						<p>
+						X-rays are usually produced by accelerating electrons in a vacuum tube between two electrodes charged to a potential difference of above 50 kV. The cathode is a heated filament capable of emitting electrons, and the anode is a piece of metal shaped specifically to produce a uniform and directed beam of X-rays when bombarded with the electrons. This arragement is quite similar to the widely-used thermionic rectifiers of the past, which is why some of them are actually really good at producing radiation when driven beyond specification. The 2C2S has been discovered to be a good alternative to an expensive purpose-made X-ray tube, despite its tendency to self-distruct when subjected to overloads.
+						</p>
+
+						<p>
+						There is however no substitute for a high voltage supply and building one on the cheap was the main task of the project. A huge iron-core mains transformer immersed in oil would have obviously been beyond the scope of this project, so I went with a compact flyback transformer followed by a Cockroft-Walton voltage multiplier. There are many online projects of this nature, but unfortunately they use unrectified flyback transformers scavanged from vintage TV sets, whereas more modern CRT transformers have potted internal diodes. No voltage multiplication can be achieved with their DC output, so I ended up winding my own AC flyback secondary on a modern ferrite core. Driving the flyback primary is easy using a ZVS inverter module intended for induction heaters, but that requires a high current 20-30 V DC supply. The rectified output of a Variac would be perfect for this, but I didn't have a Variac either. A microwave oven transformer with a rewound low-voltage secondary is even better though, because no one cares if an MOT blows up.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1XV6QR28VuxeH2q2ZDliFEbgKKxktCHA8" class="pic-link">
+								<img class="img-fluid" src="img/Xray b.jpg" title="Xray Setup">
+
+								<figcaption>Complete X-ray Setup</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="implementation-gallery" class="section">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>Implementation Details and Gallery</h2>
+
+						<p>
+						Starting from the wall plug, the first component is the microwave oven transformer with the fine wire, high voltage secondary coil replaced by around 40 turns of 14 AWG cable, resulting in a 21 V RMS output capable of above 20 A. This is then full-bridge rectified and smoothed by a 47000 uF capacitor bank.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<a href="https://drive.google.com/open?id=1XV6QR28VuxeH2q2ZDliFEbgKKxktCHA8" class="pic-link">
+							<figure class="leftfigure clickable">
+								<img class="img-fluid" src="img/Xray c.jpg" title="Microwave Transformer">
+
+								<figcaption>Microwave Transformer</figcaption>
+							</figure>
+						</a>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1zamoFwft_6NkQuNW6bH2wrQ_sJ_UJ4tX" class="pic-link">
+								<img class="img-fluid" src="img/Xray d.jpg" title="Rectifier Circuit">
+
+								<figcaption>Diode Bridge (background) and Capacitor Bank</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=19gLWcEYk0yX50aqcJYCl5UaOxXsP-j4A" class="pic-link">
+								<img class="img-fluid" src="img/Xray h.jpg" title="iClicker and Wing X-ray">
+
+								<figcaption>X-ray of iClicker and Chicken Wing</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+						The ZVS inverter uses the 30V supply to create a square wave somwhere in the low ultrasound frequency region, perfect for driving a flyback. Initially I tried to avoid using a multiplier and an AC flyback, resorting instead to an arrangement of two transformers connected in series, each with its own driver. Even so, I had to push them too hard in order to reach my target of 60 kV, and this destroyed the insulation in their original secondaries. My hand-wound secondary is much shorter, at around 600 turns, which results in a comfortable 10-15 kV before multiplication. Each layer is also isolated from the one underneath by electrical tape. The key to building a robust coil of this type is to avoid recurring variations in thickness, such as tape overlaps in the same place. The picture shows a layer being built on top of two non-overlaping strips of electrical tape, with strips of painter's tape forming guard rails at the ends and masking the fault in the center. The primary was significantly easier to build - I just used 7 loops of the 14 AWG wire I had left from the microwave transformer.
+						</p>
+
+						<p>
+						Finally, the whole assembly was immersed in cooking oil in the hope that the oil would displace the air between the windings and minimize insulation-damaging corona discharge. Pulling a vaccum on the container would have helped in this regard, but I had no vacuum pump. It is important to never run the transformer unloaded, because output voltage spikes can rapidly destroy the insulation, so I attached a 120 Mohm shunt resistor directly to the screw terminals of my enclosure to prevent that. It causes a quiescent power dissipation of only about 2 W.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1HFNXeYXY36rR_C2-6yGH2Vpptp5MtnFM" class="pic-link">
+								<img class="img-fluid" src="img/Xray i.jpg" title="Inside Flyback">
+
+								<figcaption>Winding the Flyback</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=1fN42XuDkzvVvmsbMm7Ek3RPmyelSJCR_" class="pic-link">
+								<img class="img-fluid" src="img/Xray e.jpg" title="Exposed Flyback">
+
+								<figcaption>Complete Transformer</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1VaRAvjrrLH-tgcuIimeWcjG5aQLqdFvZ" class="pic-link">
+								<img class="img-fluid" src="img/Xray l.jpg" title="Flyback Oil Jar">
+
+								<figcaption>Nutella Jar Enclosure</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+						The final part of the supply is a 3 stage Cockroft-Walton multiplier with 2.2 nF capacitors, providing a theoretical output of 60-90 kV. Of course, loses can very high when operating at these voltages, so I had to find a way to measure the output without any specialized HV test equipment. Fortunately, it turns out that the maximum arc length is a remarkably precise way to measure the peak voltage between two spherically-shaped electrodes. The only thing I needed to do was to mount two bearing balls on screws, connect them to the supply, and move them to the maximum distance where an arc would still form. There are many spark-gap tables posted online, so inferring the voltage in my system was easy. I then went back to the flyback and confirmed that its output was in the expected 10-15 kV range. Unfortunately, the multiplier itself is not visible in the pictures because it is housed inside a PVC pipe filled with oil. In this case, oil is absolutely necessary because the components have many sharp edges that favor corona discharge losses.
+						</p>
+
+						<p>
+						Connecting the tube to this circuit is not straightforward, though. Using it in hot-cathode mode, as intended, is out of the question because the tube was designed as a rectifier, so it would take immense amounts of power to maintain a significant voltage difference across it. The emitter will eventually heat-up so the current will increase even in "cold-cathode" mode, forcing almost all projects to include a current-limiting series resistor. That is equally true in reverse polarity operation, which, interestingly enough, has been known to increase x-ray yield. But this unfortunate arrangement of using the delicate filament as a target and sacrificing a good part of the supply voltage on a series resistor seemed like a bad idea to me, so I tried to take another route. Pulsing the tube at maximum voltage is much more attractive because the penetrating ability of x-rays is mostly determined by the accelerating voltage applied to the electrons. However, this approach requires a switching element that can handle very high voltages, which would be far above my budget, so I just resorted to a spark-gap again. The capacitors in the voltage multiplier would charge up until they reached the breakdown voltage of the spark gap and then unload their energy through the conductive plasma of the arc and into the tube. Another cycle would begin when the capacitors emptied below the voltage necessary to sustain the arc. In the end, it worked almost as well as I expected, with the caveat that I had to use a very large exposure time of 30 s. However, my setup destroyed no tubes when operated this way, which cannot be said about most attempts on the internet.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=14XslQpTq9CpK62k4ng4TI4TOoNbUUZbf" class="pic-link">
+								<img class="img-fluid" src="img/Xray j.jpg" title="Close-up">
+
+								<figcaption>HV Side Close-up</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=124qXJAtzFlPoZdJK67CB7jabz94f5KKb" class="pic-link">
+								<img class="img-fluid" src="img/Xray f.jpg" title="Spark Gap">
+
+								<figcaption>Spark Gap (bearing balls unmounted)</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1cxTeNXf_WoUCs1lhQpyILbB4-6DQpqPE" class="pic-link">
+								<img class="img-fluid" src="img/Xray g.jpg" title="Tube">
+
+								<figcaption>2C2S Rectifier Tube</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>Conclusion</h2>
+
+						<p>
+						Even though I only had enough time to obtain two acceptable X-rays during winter break, I believe I have achieved what I set out to do, which was to learn more about x-ray equipment and experience the thrill of playing around with high voltage for a little. One limiting factor with regards to resolution was clearly the blue Quanta III screen I used to make the x-rays visible. Finer screens were available at similar cost, but I was concerned about their lower sensitivity. The penetrating ability of the rays also limited the setup to very thin objects, but that is to be expected at low accelerating voltages.
+						</p>
+
+						<p>
+						People have achieved better results using the same tube and I suppose I could have improved my setup if I had more time to experiment. Great examples can be found on the <a href= "https://4hv.org/e107_plugins/forum/forum_viewtopic.php?106277.0" class="hyp">4HV forum</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
