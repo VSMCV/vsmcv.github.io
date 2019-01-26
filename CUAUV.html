@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>CUAUV</title>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="index.html#about">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a>
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/open?id=1OluaxPzqg-eIcMiKDygLcIoZjUBYfiKX">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-lg-12">
+						<h2>Cornell Autonomous Underwater Vehicle</h2>
+
+						<p>
+						CUAUV is a large team of Cornell engineering students that designs and builds autonomous submarines for the annual RoboSub competition in San Diego. Each year, we come up with two entirely new designs that collaborate to solve difficult underwater obstacle courses by locating acoustic sources, dropping weights on colored targets, and even firing torpedoes. We have a tradition of excelence, having taken home the first prize many times already.
+						</p>
+
+						<p>
+						I've been a member of the electrical sub-team since the beginning of my freshman year and I am now responsible for the hydrophones hardware and software used to locate acoustic underwater beacons. This is arguably one of the more complex systems on the vehicle as it involves sensitive analog circuits and requires clever digital signal processing. Failure means certain defeat because some mission elements are marked only by these beacons.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<figure class="clickable">
+							<a href="https://drive.google.com/open?id=19L6BHYeZTP6vyMgI7Et_ABsXBBgM51b6" class="pic-link">
+								<img class="img-fluid" src="img/CUAUV b.jpg" title="Submarines">
+
+								<figcaption>Apollo and Artemis in 2018</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="hydrophones" class="section">
+				<div class="row">
+					<div class="col-lg-8">
+						<h2>My work on hydrophones</h2>
+
+						<p>
+						In this article, I will describe the original state of the hydrophones signal processing software and my improvements to it. I am also working on a proof-of-concept inter-vehicle communication system, and will post once I obtain experimental results. Since I was put in charge of hydrophones in early Summer 2018, I have overhauled the code to greatly decrease the tracking error rate and to remove the need for time-consuming user tuning. The new software is also able to create comprehensive real-time graphs of key parameters, a feature sorely missed from the original implementation. On the communications front, I have begun exeprimenting with transmitter designs in late 2018 and pool testing should commence soon.
+						</p>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1qO48udBGOs7NJFQWRceHg9rS96rvR_D6" class="pic-link">
+								<img class="img-fluid" src="img/CUAUV c.jpg" title="Hydrophones">
+
+								<figcaption>The three hydrophone elements on Castor</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1KlkUG1q2JLV5q2HnWcLmWq6QxPf8ccdF" class="pic-link">
+								<img class="img-fluid" src="img/CUAUV d.jpg" title="Hydrophones Board">
+
+								<figcaption>The Hydrophones Board, designed in 2017 by Julia Currie</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-8">
+						<h3>Overall design and challenges in beacon tracking</h3>
+
+						<p>
+						The system detects the heading and elevation of acoustic sources by comparing the relative phase of signals as they reach three miniature TC4013 hydrophone elements placed in a right triangle arrangement. If the element in the right angle corner is thought of as a reference, then the phase shifts introduced at the other two elements by their different spatial placement can be used to infer the location of the source. The main difficulty is that the sources emit 4 ms pulses spaced 2 seconds apart and after each pulse the sound reflects inside the pool and can mimic a valid signal coming from a completely different location. Moreover, only the very first section of each "ping" is usable since the competition pool is rather shallow and reflections from the surface and from the bottom can corrupt the signal rather quickly. To overcome this problem, the system must be able to both filter out echos and to trigger on the line-of-sight component of real signals.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+						The hardware implementation includes three 14-bit ADCs that sample the signal 400K times a second and transmit the data to the central computer through Ethernet, using an FPGA. The analog side has a gain of around 10 and uses 4th order Chebyshev filters to reject noise outside the 25 to 40 KHz beacon range. Aditional adjustable gain is however necessary and this is achieved using the programmable gain amplifiers inside the ADCs. DSP is done on the central computer because this makes adjustments and debugging significantly easier. The added CPU utilization is currently insignificant.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h3>DSP code before 2018</h3>
+
+						<p>
+						Since there can be up to four beacons emitting at the same time in the pool, the original implementation first passed the raw samples through a 10th order IIR filter to select only one of the four possible frequencies (25, 30, 35 and 40 Khz). If the total power of this resulting signal exceeded a certain threshold on a 256 sample window, a ping would be declared and the N = 256 DFT bin for the tracked frequency would be computed using Goertzel's Algorithm. The phases would then be extracted, from which it is trivial to calculate the headings. To avoid echos, the system used a simple cooldown timer after finding a ping.
+						</p>
+
+						<p>
+						This approach had a considerable number of problems however, and lacked some important features. The ADC gain was fixed at a large x128 even though the PGAs could theoretically be set from the central computer. This caused terrible clipping at close range, but the signal was still borderline usable after the bandpass IIR filtering. Therefore, this was not a critical fault, or at least not as critical as the triggering system. Even though setting a power threshold sounds easy, in reality the user had no idea where the noise floor was because the software presented no spectrograms nor outputted any values. The problem was further compounded by the wildly varying signal strength caused by the lack of auto-gain. It was very easy to set the threshold too high, missing the beginning of pings and triggering on multipath corrupted data or even on echos. It is a very aggravating fact, but sometimes echos can be stronger than the original signals.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<h3>Fall 2018 Revision</h3>
+
+						<p>
+						My auto-gain algorithm fulfills its goal without much sophistication. In intervals of slightly more than 2 seconds (that are guaranteed to contain at least one ping), the highest sample is recorded. If the highest quantization level is reached, the interval is terminated immediately, no DSP is performed, and gain is decreased to the level immediately lower. Otherwise, the highest gain level where that sample would be at least 10% away from clipping is set for the next interval. Such a simple system can be used because the requirements are very relaxed. It is not a problem if the system misses a few pings before finding the correct gain level.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6">
+						<p>
+						The greater challenge was comming up with a completely automatic triggering system that would work under all conditions. I solved this problem by finding two invariants that the original system had not exploited:
+							<ol type="1">
+								<li>The pings are periodic</li>
+								<li>Good pings are marked by sharp increases in signal strength and echos ramp up slowly even if they end up louder</li>
+							</ol>
+						The first observation allowed me to split the signal into intervals and forget about having to find any thresholds or noise levels. I just needed to find a function that gets maximized on the beginning of pings and trigger on the peak of that function in every interval. In fact, I was able to reuse the auto-gain system intervals, which are guaranteed to contain at least one ping. The specific function falls out of the second remark - it needs to be a measure of how quickly the signal strength is changing. I chose to constantly compute the tracked frequency DFT bin on non-overlapping windows of 128 samples and use the ratio between consecutive results as my function. Note that this also removes the need for IIR filtering, because only the tracked frequency signal component is taken into account.
+						</p>
+					</div>
+
+					<div class="col-lg-6">
+						<figure class="rightfigure clickable">
+							<a href="https://drive.google.com/open?id=1ENp4CISaovC1LEi8lHLuVWafLD7Z-fh5" class="pic-link">
+								<img class="img-fluid" src="img/CUAUV e.png" title="DSP Results">
+
+								<figcaption>DSP results on an interval</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+						I chose the ratio between consecutive values as opposed to the difference (derivative) because I observed that it marks the very beginning of pings better, but this choice has a downside. If the noise has very little content in the tracked freqency bin on a random window, then the following window might cause a spurious trigger event. I needed to find a way to disfavor cases when both windows have low signal strength. As it turns out, adding the average noise level to both of the values before computing their ratio is enough to fix this problem. It does not do much to events that happen on large numbers, but profoundly hurts situations when the values are close to the noise floor. Obtaining the noise floor level is actually very easy. Taking the mean of all DFT bin results is enough because most of every interval is noise, with pings and echos making up less than 5%.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1H05GqsPQlYmamyl2XZKPTh8nkPXKCUcp" class="pic-link">
+								<img class="img-fluid" src="img/CUAUV f.png" title="Successfully Triggering">
+
+								<figcaption>Successfully triggering on the beginning of a ping</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-8">
+						<h3>Conclusion</h3>
+
+						<p>
+						Tests in our 25 yard pool at Cornell have been very successful, with error rates close to zero, but the competion pool at Transdec in San Diego is significantly larger. In any case, we have raw data dumps taken in 2018 and the new system performs very well on them. If it turns out that I have overlooked any important aspects, real-time graphs like the ones pictured should help in debugging the system. I have also arranged the code such that switching back to a threshold approach is easy, in the worst case scenario.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
