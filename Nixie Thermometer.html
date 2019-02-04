@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Nixie Thermometer</title>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/main.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg">
+      		<a class="navbar-brand navbar-text" href="index.html#about">Vlad Smarandache</a>
+
+      		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon">
+   					<div></div>
+   					<div></div>
+   					<div></div>
+   				</span>
+  			</button>
+
+    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    			<div class="navbar-nav ml-auto">
+      				<a class="nav-item nav-link navbar-text" href="index.html#about">About</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#projects">Projects</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#experience">Experience</a>
+      				<a class="nav-item nav-link navbar-text" href="https://drive.google.com/open?id=1OluaxPzqg-eIcMiKDygLcIoZjUBYfiKX">Resume</a>
+      				<a class="nav-item nav-link navbar-text" href="index.html#contact">Contact</a>
+    			</div>
+  			</div>
+		</nav>
+
+		<div class="container">
+			<div id="about" class="section">
+				<div class="row">
+					<div class="col-lg-6">
+						<figure class="leftfigure clickable">
+							<a href="https://drive.google.com/open?id=1hWt-WCpUL488nUht4jE10EvF6iALQ19F" class="pic-link">
+								<img class="img-fluid" src="img/Nixie Thermometer a.jpg" title="Orrrrange">
+
+								<figcaption>Who said '70s orange was a fad?</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-6">
+						<h2>Nixie Thermometer in an Altoids Tin</h2>
+
+						<p>
+						Emboldened by my success in building a VFD clock, I decided to use the more rare (and more expensive) Nixie tubes for another vintage everyday object. This time however, the project would have to be twice as polished - The idea was to create something that I could give away as a farewell gift to a college friend who graduated in 2018. Since the device is meant be powered at all times, I focused a lot on minimizing safety hazards. This is in fact the only time I have conducted flame testing for one of my projects :).
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="design" class="section">
+				<div class="row">
+					<div class="col-lg-12">
+						<h3>Design</h3>
+
+						<p>
+						IN-14 tubes require a striking voltage of more than 190 V to light up and then around 150 V for maintaining the glow. To drop the excess voltage once operation begins, Nixie circuits generally use resistive ballasts. Since the voltages involved are quite high, specialized driver ICs are required, and I chose the Russian-made K155ID1 for this project based on its still reasonable availabilty. It is basically a binary to decimal decoder equipped with 10 outputs that connect to the cathodes and can withstand the high voltage when off and sink the few milliamps required for operation when on. Unfortunately, I found no way to turn all the outputs off at once, so I couldn't implement dimming using only one chip for each tube. Since I knew that the brighness of the tubes would be too annoying at night, I resorted to a somewhat complex arrangement of three drivers with some of the outputs left unconnected. I made a comical miscalculation by assuming that I can use one of the ICs to drive cathodes on both tubes at once, but I managed to partially fix the resulting problem in software. In the end, I had to multiplex the tubes, but I compensated for the decreased brightness by adjusting the resistive ballast. Dimming also worked fine after I painstakingly found the best mapping of light sensor data to desired brightness.
+						</p>
+
+						<p>
+						A bigger issue was that the self-heating caused by the power-hungry Nixies made the device completely useless as a thermometer. After careful deliberation, I decided to cheat my way through the problem and just artificially subtract 3 degrees Celsius at all times. The result is accurate to 1 degree after the warm-up period, which is around 5 minutes or even less if a brave user decides to blow warm air on the sensor despite the electric shock danger. In any case, I went to great lengths to avoid exposing 190 V lines and the boost converter cannot source enough current to injure anyone.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<figure class="leftfigure clickable">
+							<a href="https://github.com/VSMCV/Nixie-Thermometer/tree/master/Hardware" class="pic-link">
+								<img class="img-fluid" src="img/Nixie Thermometer b.jpg" title="Nixie Hardware">
+
+								<figcaption>Electrical schematic & layout</figcaption>
+							</a>
+						</figure>
+					</div>
+
+					<div class="col-lg-4">
+						<figure class="clickable">
+							<a href="https://github.com/VSMCV/Nixie-Thermometer/tree/master/Software" class="pic-link">
+								<img class="img-fluid" src="img/Nixie Thermometer c.jpg" title="Nixie Software">
+
+								<figcaption>ATmega48PB Code</figcaption>
+							</a>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<div id="backtotop" class="section back-to-top">
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="#" class="hyp">Back to top</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
